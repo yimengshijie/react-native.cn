@@ -11,12 +11,13 @@ import { AppRegistry, Text, View } from 'react-native';
 class Blink extends Component {
   constructor(props) {
     super(props);
-    this.state = { showText: true };
-
-    // 每1000毫秒对showText状态做一次取反操作
+    this.state = { showText: true };//这里的showText为自定义状态名，使用自定义状态名时后面对应的状态名也要相应改变
+    
+    // 每1000毫秒对showText状态做一次取反操作
     setInterval(() => {
       this.setState({ showText: !this.state.showText });
-    }, 1000);
+      //this.State = {showText : !this.state.showText}; 这种方式无法达到反复取反操作
+    }, 1000);
   }
 
   render() {
